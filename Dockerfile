@@ -38,6 +38,10 @@ RUN mkdir -p /var/lib/motioneye
 COPY script/* /usr/local/bin/ 
 RUN chmod +x /usr/local/bin/*
 
+RUN pip install --upgrade pip
+RUN pip install -U setuptools
+RUN pip install -U pip
+
 RUN pip install motioneye
 
 #ADD supervisor /etc/supervisor
