@@ -26,7 +26,7 @@ RUN apt-get update && apt-get install -q -y --no-install-recommends \
     apt-get -y clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN add-apt-repository -y ppa:mc3man/trusty-media && \
+RUN add-apt-repository -y ppa:mc3man/xerus-media && \
 	apt-get update && \
 	apt-get install -q -y --no-install-recommends ffmpeg v4l-utils python-pip python-dev libssl-dev libcurl4-openssl-dev libjpeg-dev && \
 	apt-get -y clean && \
