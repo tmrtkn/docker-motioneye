@@ -2,8 +2,6 @@ FROM phusion/baseimage:0.9.18
 
 MAINTAINER jshridha <jshridha@gmail.com>
 
-ENV MOTIONEYE_VERSION=0.36.1
-
 RUN apt-get update && apt-get install -q -y --no-install-recommends \
     bsd-mailx \
 #    motion \
@@ -40,7 +38,7 @@ RUN mkdir -p /var/lib/motioneye
 COPY script/* /usr/local/bin/ 
 RUN chmod +x /usr/local/bin/*
 
-RUN pip install motioneye==$MOTIONEYE_VERSION
+RUN pip install motioneye
 
 #ADD supervisor /etc/supervisor
 
