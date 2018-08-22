@@ -5,7 +5,7 @@ cd /tmp
 
 git clone https://github.com/Mr-Dave/motion.git
 cd motion
-git checkout release-4.0.1
+git checkout release-4.1.1
 autoreconf -fiv
 ./configure
 make
