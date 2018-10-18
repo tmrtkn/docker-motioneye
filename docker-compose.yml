@@ -1,0 +1,23 @@
+version: '2'
+services:
+    motioneye:
+        image: motioneye
+        expose:
+            - 8765
+        environment:
+            TIMEZONE: "Europe/Helsinki"
+        privileged: true
+        volumes:
+            - /data-store:/var/lib/motion
+            - /home/gorkh/workspace/motion/dockmotion/config/cameras/:/etc/motion/
+            - /home/gorkh/tmp:/home/nobody/media
+            - /home/gorkh/workspace/docker-motioneye/config:/config
+            - /run/dbus/system_bus_socket:/run/dbus/system_bus_socket:ro
+
+    front:
+        image: front
+        ports:
+            - 8000:8000
+        volumes_from:
+            - motioneye
+
