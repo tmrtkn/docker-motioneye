@@ -13,11 +13,15 @@ services:
             - /home/gorkh/tmp:/home/nobody/media
             - /home/gorkh/workspace/docker-motioneye/config:/config
             - /run/dbus/system_bus_socket:/run/dbus/system_bus_socket:ro
+        restart: 'always'
 
     front:
         image: front
+        environment:
+            TIMEZONE: "Europe/Helsinki"
         ports:
             - 8000:8000
         volumes_from:
             - motioneye
+        restart: 'always'
 
